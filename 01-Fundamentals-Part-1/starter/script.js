@@ -43,8 +43,8 @@
 // // x *= 4; // x = x * 4
 // // console.log(x);
 // // x++; // x = x + 1
+// console.log(x);
 // // //////////////////////////////////////////
-// // console.log(x);
 // // console.log(ageJonas > ageSarah);
 // // console.log(ageSarah >= 18);
 // // const isFullAge = ageSarah >= 18;

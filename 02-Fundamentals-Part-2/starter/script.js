@@ -159,7 +159,7 @@
 // // // // console.log(friends);
 // // // // friends.unshift("John"); // Adds a new element to the beginning of the array and returns the new length of the array.
 // // // // console.log(friends);
-// // // // const lastFriend = friends.pop();
+// // // // const lastFriend = friends.pop();//Removes the last element ofthe arrya and returns the removed element.
 // // // // console.log(lastFriend);
 // // // // console.log(friends);
 // // // // friends.shift(); // Removes the first element from the array and returns that removed element.
