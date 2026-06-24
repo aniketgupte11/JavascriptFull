@@ -8,10 +8,16 @@
 // document.querySelector('.guess').value = 23; //sets the value of the text field
 // console.log(document.querySelector('.guess').value); // gets the value to the textfield
 // ////////////////////////////////////////////////////////////////////////////////////////////
+
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
 console.log(secretNumber);
 let score = 20;
 let highScore = 0;
+
+// Add a function to display messages
+const displayMessage = message => {
+  document.querySelector('.message').textContent = message;
+};
 
 document.querySelector('.check').addEventListener('click', function () {
   const guess = Number(document.querySelector('.guess').value); //convert to number and get the value
@@ -20,17 +26,25 @@ document.querySelector('.check').addEventListener('click', function () {
   );
   //if no input
   if (!guess) {
-    document.querySelector('.message').textContent = 'No number 😒';
+    //instead of the below code wwe will use displayMessage Function
+    //document.querySelector('.message').textContent = 'No number 😒';
+    displayMessage('No number 😒');
+
     // if no number is typed we send a message to .message text
   } // when number is high
   else if (guess !== secretNumber) {
     if (score > 1) {
-      document.querySelector('.message').textContent =
-        guess > secretNumber ? 'Too High 😒' : 'Too Low 😒';
+      //document.querySelector('.message').textContent =
+      //instead of the below code wwe will use displayMessage Function
+      //document.querySelector('.message').textContent = 'Too High 😒' : 'Too Low 😒'';
+      displayMessage(guess > secretNumber ? 'Too High 😒' : 'Too Low 😒');
+
       score--;
       document.querySelector('.score').textContent = score;
     } else {
-      document.querySelector('.message').textContent = 'You Lost 😔';
+      //instead of the below code wwe will use displayMessage Function
+      //document.querySelector('.message').textContent = 'You Lost 😔'';
+      displayMessage('You Lost 😔');
     }
   }
 
@@ -58,7 +72,9 @@ document.querySelector('.check').addEventListener('click', function () {
   //   }
   // } // when player wins
   else {
-    document.querySelector('.message').textContent = 'Bang On 🏆';
+    //instead of the below code wwe will use displayMessage Function
+    //document.querySelector('.message').textContent = 'Bang On 🏆';
+    displayMessage('Bang On 🏆');
     secretNumber = Math.trunc(Math.random() * 20) + 1;
     document.querySelector('.number').textContent = secretNumber;
     console.log('Bang on Target');
@@ -76,7 +92,10 @@ document.querySelector('.check').addEventListener('click', function () {
 document.querySelector('.again').addEventListener('click', function () {
   score = 20;
   document.querySelector('.score').textContent = score;
-  document.querySelector('.message').textContent = 'Start guessing...';
+  //instead of the below code wwe will use displayMessage Function
+  //document.querySelector('.message').textContent = 'Start guessing...';
+  displayMessage('Start guessing...');
+  //document.querySelector('.message').textContent = 'Start guessing...';
   document.querySelector('.number').textContent = '?';
   document.querySelector('.guess').value = '';
   document.querySelector('.number').style.width = '15rem';
